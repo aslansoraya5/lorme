@@ -1,129 +1,112 @@
-# Lorme - Smart WhatsApp Auto Responder
+# Lorme Android App - Build Instructions
 
-## ⚠️ Important Compliance Notice
+## 📱 How to Build Android APK
 
-**Please read this carefully before using Lorme:**
+### Option 1: Using Capacitor (Recommended)
 
-### WhatsApp Business Policy (2026)
-Lorme is designed to work with the **official WhatsApp Business API** only. Meta/WhatsApp has specific policies:
+1. **Install Capacitor CLI globally:**
+   ```bash
+   npm install -g @capacitor/cli
+   ```
 
-#### ✅ ALLOWED:
-- Task-specific business bots (customer support, order tracking, bookings)
-- Auto-replies within the 24-hour response window
-- Approved message templates for outbound messages
-- Clear escalation paths to human agents
+2. **Initialize Capacitor (already configured):**
+   ```bash
+   npx cap init
+   ```
 
-#### ❌ PROHIBITED:
-- General-purpose AI chatbots without business purpose
-- Automation on personal WhatsApp accounts
-- Spam or unsolicited bulk messaging
-- Messages outside 24-hour window without approved templates
+3. **Add Android platform:**
+   ```bash
+   npx cap add android
+   ```
 
-### Legal Compliance
-You are responsible for complying with:
-- **GDPR** (European Union)
-- **CCPA** (California, USA)
-- **TCPA** (Telephone Consumer Protection Act - USA)
-- **CASL** (Canada)
-- Local anti-spam regulations in your jurisdiction
+4. **Build the web app:**
+   ```bash
+   npm run build
+   ```
 
-### Privacy & Security
-- ✅ All data is stored **locally in your browser**
-- ✅ No data is sent to external servers
-- ✅ You have complete control over your data
-- ✅ No third-party tracking
+5. **Sync with Android:**
+   ```bash
+   npx cap sync android
+   ```
 
----
+6. **Open in Android Studio:**
+   ```bash
+   npx cap open android
+   ```
 
-## 📥 Download & Installation
+7. **Build APK in Android Studio:**
+   - Go to Build > Build Bundle(s) / APK(s) > Build APK(s)
+   - APK will be generated at: `android/app/build/outputs/apk/debug/app-debug.apk`
 
-### Option 1: Direct Download
-The application is a **single self-contained HTML file**:
-- Location: `dist/index.html`
-- Size: ~279KB
-- No installation required
+### Option 2: Using Command Line (No Android Studio)
 
-### Option 2: Run from Source
 ```bash
-# Install dependencies
-npm install
+# Navigate to android folder
+cd android
 
-# Start development server
-npm run dev
+# Build debug APK
+./gradlew assembleDebug
 
-# Build for production
-npm run build
+# APK location: app/build/outputs/apk/debug/app-debug.apk
 ```
 
----
+### Option 3: Quick PWA to APK (Easiest)
 
-## 🚀 How to Use
-
-1. **Open the application** in any modern web browser (Chrome, Firefox, Safari, Edge)
-2. **Accept the compliance disclaimer** on first launch
-3. **Create auto-reply rules** based on keywords and contacts
-4. **Schedule messages** for specific times
-5. **Use quick replies** for common responses
-6. **Set business hours** for automated outside-hours responses
+1. Visit: https://pwabuilder.com
+2. Enter your website URL (or host the web app)
+3. Download Android App Package
+4. Install on your Android device
 
 ---
 
-## 📱 Features
+## 📦 APK Information
 
-| Feature | Description |
-|---------|-------------|
-| 🤖 Auto Reply Rules | Create keyword-based automated responses |
-| ⏰ Scheduled Messages | Send messages at specific times with recurring options |
-| ⚡ Quick Replies | Shortcut-based instant responses |
-| 🕐 Business Hours | Auto-reply outside working hours |
-| 📊 Dashboard | Track all messaging activity and statistics |
-| 📝 Response Logs | View all incoming/outgoing messages |
-| 🌙 Dark Mode | Beautiful dark theme support |
-| 🔒 Privacy First | All data stored locally, no external servers |
+- **App Name**: Lorme
+- **Package Name**: com.lorme.app
+- **Version**: 1.0.0
+- **Minimum SDK**: 22 (Android 5.1)
+- **Target SDK**: 34 (Android 14)
+- **Permissions**: None required (runs entirely in browser)
 
 ---
 
-## 🔧 Technical Requirements
+## 🔒 Security Notes
 
-- **Browser**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
-- **Storage**: LocalStorage (browser-based)
-- **Internet**: Not required after initial load (works offline)
-- **WhatsApp Integration**: Requires separate WhatsApp Business API setup
-
----
-
-## ⚖️ Terms of Use
-
-1. **Compliance**: You agree to use Lorme only in compliance with WhatsApp Business Policy
-2. **Responsibility**: You are solely responsible for your messaging practices
-3. **No Warranty**: Lorme is provided "as is" without warranty
-4. **No Liability**: The developers are not liable for any account suspensions or legal issues
-5. **Official API**: You must use the official WhatsApp Business API for actual messaging
+This app:
+- ✅ Stores all data locally on device
+- ✅ No internet permission required
+- ✅ No external server communication
+- ✅ Privacy-first design
 
 ---
 
-## 📄 License
+## 📥 Installation
 
-This application is provided for educational and legitimate business purposes only.
-
----
-
-## 🆘 Support & Resources
-
-- **WhatsApp Business API**: https://business.whatsapp.com/
-- **WhatsApp Business Policy**: https://business.whatsapp.com/policy
-- **Meta Business Help Center**: https://www.facebook.com/business/help
+1. Transfer the `.apk` file to your Android device
+2. Enable "Install from Unknown Sources" in Settings
+3. Tap the APK file to install
+4. Open Lorme and start using!
 
 ---
 
-## 📞 Contact
+## 🆘 Troubleshooting
 
-For questions about compliance:
-- Review WhatsApp's official policies
-- Consult with legal counsel in your jurisdiction
-- Contact WhatsApp Business support
+**Error: "Android SDK not found"**
+- Install Android Studio
+- Set ANDROID_HOME environment variable
+
+**Error: "Gradle build failed"**
+- Update Gradle wrapper
+- Check Android SDK installation
+
+**APK installation blocked**
+- Enable "Unknown Sources" in device settings
+- Check if Play Protect is blocking installation
 
 ---
 
-**Last Updated**: 2026
-**Version**: 1.0
+## 📞 Support
+
+For issues, check:
+- [Capacitor Documentation](https://capacitorjs.com/)
+- [Android Developer Guide](https://developer.android.com/)
