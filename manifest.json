@@ -1,0 +1,17 @@
+{
+  "name": "Lorme - Smart WhatsApp Auto Responder",
+  "short_name": "Lorme",
+  "description": "Smart WhatsApp Auto Responder for automated messaging",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
