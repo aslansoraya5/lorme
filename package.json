@@ -6,16 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "android": "npx cap add android && npx cap sync android",
-    "android:open": "npx cap open android",
-    "android:build": "cd android && ./gradlew assembleDebug",
-    "android:build:windows": "cd android && gradlew assembleDebug"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@capacitor/android": "^8.3.1",
-    "@capacitor/cli": "^7.6.2",
-    "@capacitor/core": "^8.3.1",
     "clsx": "2.1.1",
     "lucide-react": "^1.14.0",
     "react": "19.2.3",
